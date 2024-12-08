@@ -1,0 +1,88 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6347; /* Warna saat hover */
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none; /* Tersembunyi secara default */
+        position: absolute;
+        background-color: #333;
+        top: 60px; /* Jarak dari navbar */
+        left: 0;
+        width: 100%;
+    }
+
+    .navbar.active .nav-links {
+        display: flex; /* Tampilkan saat aktif */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+/* Toggle Button */
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-button div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px;
+}
+
+/* Menampilkan tombol toggle pada layar kecil */
+@media (max-width: 768px) {
+    .toggle-button {
+        display: flex;
+    }
+}
